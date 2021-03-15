@@ -4,3 +4,4 @@ lib
 share
 dist
 src/newton_polynomial.egg-info
+pyvenv.cfg

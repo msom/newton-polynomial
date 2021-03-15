@@ -17,7 +17,7 @@ def coefficients(x, y):
     return diagonal(result)
 
 
-def polynomial(a, x):
+def expression(a, x):
     assert len(a) == len(x), "arguments must have the same size"
     size = len(a)
 
@@ -27,3 +27,9 @@ def polynomial(a, x):
         result[i] = a[i] / (a[i-1] or 1) * result[i-1] * (x_ - x_i)
 
     return simplify(sum(result))
+
+
+def polynomial(x, y):
+    a = coefficients(x, y)
+    p = expression(a, x)
+    return a, p
