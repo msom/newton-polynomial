@@ -22,9 +22,11 @@ def expression(a, x):
     size = len(a)
 
     x_ = symbols('x')
+    xs = [1 for i in range(size)]
     result = [a[0] for i in range(size)]
     for i, x_i in enumerate(x[:-1], start=1):
-        result[i] = a[i] / (a[i-1] or 1) * result[i-1] * (x_ - x_i)
+        xs[i] = xs[i-1] * (x_ - x_i)
+        result[i] = a[i] * xs[i]
 
     return simplify(sum(result))
 
