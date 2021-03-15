@@ -31,5 +31,4 @@ def expression(a, x):
 
 def polynomial(x, y):
     a = coefficients(x, y)
-    p = expression(a, x)
-    return a, p
+    return expression(a, x)
